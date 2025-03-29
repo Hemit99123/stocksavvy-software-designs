@@ -6,3 +6,8 @@ This repo contains all the software designing work that went into StockSavvy. Ea
 
 - Authentication Flow (authflow.md)
 - Database Diagrams and their relationships (db.md)
+
+### 💻 Technology used:
+
+- Mermaid Diagramming Tool
+- Markdown
