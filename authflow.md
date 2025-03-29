@@ -6,7 +6,7 @@ This flow contains 2 apps:
 
 The flow contains logic for a session-based authentication and a role based authentication system with a user and admin role. 
 
-### Main website:
+### 🚀 Main website:
 ```mermaid 
 flowchart 
     A([Start Website]) --> B[OTP Generation]
@@ -35,13 +35,12 @@ flowchart
 
 ```
 
-### RACT (Role assignment CLI Tool):
+### 🎮 RACT (Role assignment CLI Tool):
 
 ```mermaid
 flowchart
-    Q([Start Role Assignment Script]) --> R[User inputs new role]
-    R --> Z{Check if role changed}
-    Z -- "Role Changed" --> S[Delete Sessions]
-    Z -- "Role Unchanged" --> T([End])
-    S --> T
+    Q([Start Role Assignment Script]) --> R[Developer inputs new role + user email]
+    R --> G[Find user in database through email identifer]
+    G --> K[Update user field with new role]
+    K --> T([End])
 ```
