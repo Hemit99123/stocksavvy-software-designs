@@ -1,5 +1,11 @@
 ## Database Diagram
 
+This diagram maps out the relations between the different tables used by StockSavvy's web platform. 
+<br />
+<br />
+**FK** represents *foriegn keys* whilst **PK** represents *primary keys*
+<br />
+
 ```mermaid 
 classDiagram
     class User {
