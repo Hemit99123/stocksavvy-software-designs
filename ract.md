@@ -1,4 +1,4 @@
-# 🎮 RACT (Role Assignment CLI Tool):
+## 🎮 RACT (Role Assignment CLI Tool):
 
 All commands run in infinite loops so they will always return to the start of the program. To stop it, you must press Ctrl+C like any other CLI-based tool.
 
