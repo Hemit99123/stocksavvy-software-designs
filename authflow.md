@@ -9,7 +9,8 @@ The flow contains logic for a session-based authentication and a role based auth
 ```mermaid 
 flowchart 
     A([Start Website]) --> B[OTP Generation]
-    B --> C[Store OTP in Redis]
+    B --> KJ[Send email of OTP]
+    KJ --> C[Store OTP in Redis]
     C --> D([OTP Expiry])
     D --> O([End])
   
