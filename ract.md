@@ -12,7 +12,6 @@ flowchart
     CheckConfigFile -- No --> CreateConfigFile(["Create 'credentials.json' and add database fields"])
     LoadAndUpdateConfig --> ReturnToStart(["Return to start"])
     CreateConfigFile --> ReturnToStart
-    ReturnToStart --> Start
 
     CommandChoice -- Update User Role --> RequestUserEmail(["Prompt for target user's email"])
     RequestUserEmail --> CheckCredentialsFile{"Does 'credentials.json' exist?"}
