@@ -9,6 +9,8 @@ The authentication for StockSavvy is conducted through Redis-stored sessions. Al
   
 <img width="1231" alt="Screenshot 2025-03-30 at 6 50 54 PM" src="https://github.com/user-attachments/assets/740c6e26-c4ce-4f69-b988-e602c62322a0" />
 <br />
+<br />
+<br />
 This same logic will be applied to the authflow in which all sessions are associated with an index which is configured through CLI-interface (same command as <b>FT.CREATE</b>) meaning all sessions will now have this index attached to it.
 <br />
 
