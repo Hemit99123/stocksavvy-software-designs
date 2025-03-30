@@ -15,33 +15,28 @@ This same logic will be applied to the authflow in which all sessions are associ
 <br />
 
 ```mermaid 
-flowchart 
-    A([Start Website]) --> B[OTP Generation]
-    B --> KJ[Send email of OTP]
-    KJ --> C[Store OTP in Redis]
-    C --> D([OTP Expiry])
-    D --> O([End])
-  
-    C --> E{User's OTP matches Redis records}
-    E -- Yes --> F[Assign Session]
-    E -- No --> O
-  
-    F --> G[Assign Session to Redis]
-    G --> HN[Index of idx:session is automatically attached, meaning users can query this session with session-owner's name]
-    G --> H[Session Details<br/>• Email<br/>• Time Created<br/>• Role]
-    H --> I[Create Cookie with Session ID]
-    I --> J{Check Session ID with Redis?}
-    J -- True --> K{Check Role?}
-    J -- False --> O
-  
-    K -- User --> L[User App]
-    K -- Admin --> M[Admin App]
-    L --> N([Logout])
-    M --> N
-    N --> P([Delete Sessions])
-    P --> O
+flowchart TB
+    Start["Start Process"] --> GenerateOTP["Generate OTP (one time password)"]
+    GenerateOTP --> CacheOTP["Cache OTP in Redis"] & OTPExpiry["OTP reaches expiry time (3mins)"] & SendOTP["Send OTP via Email"]
+    OTPExpiry --> End["End Process"]
+    SendOTP --> UserSubmit["User submits OTP + email + name data"]
+    UserSubmit --> ValidateOTP{"Check if OTP matches Redis records"}
+    ValidateOTP -- Yes --> CheckDatabase{Compare email and name in SQL user table}
+    ValidateOTP -- No --> End
 
 
+    CheckDatabase -- Exists --> StoreSession["Store Session Data in Redis (name, email, role)"]
+    CheckDatabase -- Does NOT Exist --> CreateUser["Create a user document with email, name, role"]
+    CreateUser --> StoreSession
+
+    StoreSession --> AttachIndex["Attach session index to query w/ name"] & CreateCookie["Generate Session Cookie with the session id as the body"]
+    CreateCookie --> ValidateCookie{"Validate Session Cookie with Redis through querying session id in the cache"}
+    ValidateCookie -- Exists --> CheckRole{"Determine User Role"}
+    ValidateCookie -- Does NOT Exist --> End
+    CheckRole -- User --> UserApp["Redirect to User Application"]
+    CheckRole -- Admin --> AdminApp["Redirect to Admin Dashboard"]
+    UserApp --> Logout["User Logout"]
+    AdminApp --> Logout
+    Logout --> DeleteSession["Clear Session Cookie + Redis key-value pair"]
+    DeleteSession --> End
 ```
-
-
