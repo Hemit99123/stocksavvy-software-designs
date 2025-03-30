@@ -10,9 +10,9 @@ flowchart
     RequestDBCredentials --> CheckConfigFile{"Does 'credentials.json' exist?"}
     CheckConfigFile -- Yes --> LoadAndUpdateConfig(["Load 'credentials.json' and update database fields"])
     CheckConfigFile -- No --> CreateConfigFile(["Create 'credentials.json' and add database fields"])
-    LoadAndUpdateConfig --> ReturnToStart1(["Return to start"])
-    CreateConfigFile --> ReturnToStart1
-    ReturnToStart1 --> Start
+    LoadAndUpdateConfig --> ReturnToStart(["Return to start"])
+    CreateConfigFile --> ReturnToStart
+    ReturnToStart --> Start
 
     CommandChoice -- Update User Role --> RequestUserEmail(["Prompt for target user's email"])
     RequestUserEmail --> CheckCredentialsFile{"Does 'credentials.json' exist?"}
@@ -25,7 +25,7 @@ flowchart
     DeleteUserSessions --> PromptForRoleChange{"Select new role type"}
     PromptForRoleChange -- Admin --> UpdateToAdmin(["Set user role to 'admin' in PostgreSQL"])
     PromptForRoleChange -- User --> UpdateToUser(["Set user role to 'user' in PostgreSQL"])
-    UpdateToAdmin --> ReturnToStart2(["Return to start"])
-    UpdateToUser --> ReturnToStart2
-    ReturnToStart2 --> Start
+    UpdateToAdmin --> ReturnToStart
+    UpdateToUser --> ReturnToStart
+    ReturnToStart --> Start
 ```
