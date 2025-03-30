@@ -1,6 +1,6 @@
 ## 🔐 Authentication Flow
 
-The authentication for StockSavvy is conducted through Redis-stored sessions. All of these sessions have an associated index for easier retrival when you need to query speific content from the body (name, email, etc). This index and advanced "full-text" querying is acheived through the RediSearch module.
+The authentication for StockSavvy is conducted through Redis-stored sessions. All of these sessions have an associated index for easier retrival when you need to query speific content from the body (name, email, etc). This index and advanced "full-text" querying is acheived through the **RediSearch module**.
 
 ### Here is an example of it on Redis-CLI:
 - created JSON sessions
