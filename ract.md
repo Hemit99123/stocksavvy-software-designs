@@ -6,6 +6,8 @@ All commands run in infinite loops so they will always return to the start of th
 
 From this query, we get keys which we can use to delete, revoking users authentication status to switch role
 
+Branch out from the Retrieve Redis session to show its process of using the index for querying so we can query w/ name from JSON body
+
 ```mermaid
 flowchart 
     Start["Start"] --> CommandChoice{"Developer selects a command"}
