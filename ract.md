@@ -2,6 +2,10 @@
 
 All commands run in infinite loops so they will always return to the start of the program. To stop it, you must press Ctrl+C like any other CLI-based tool.
 
+**TO DO: March 31st 2025** Update the redis session querying to include the RediSearch and querying w/ name from json field using index already built in CLI
+
+From this query, we get keys which we can use to delete, revoking users authentication status to switch role
+
 ```mermaid
 flowchart 
     Start["Start"] --> CommandChoice{"Developer selects a command"}
