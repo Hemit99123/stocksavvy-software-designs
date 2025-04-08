@@ -1,4 +1,4 @@
-## Unit Testing
+## 🧪 Unit Testing
 
 Unit testing is a way of testing the smallest blocks of code called **units.** Some examples of units are functions, methods, classes, and many more. This requires more development time to build these unit tests. So, why are they worth it?
 
