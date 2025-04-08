@@ -2,8 +2,6 @@
 
 All commands run in infinite loops so they will always return to the start of the program. To stop it, you must press Ctrl+C like any other CLI-based tool.
 
-**TO DO: April 5th 2025:add index for the new hash datatype that is used for storing session + ensure the custom session assigning logic works on backend**
-
 ```mermaid
 flowchart 
     Start["Start"] --> CommandChoice{"Developer selects a command"}
