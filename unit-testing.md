@@ -8,7 +8,7 @@ Unit testing is a way of testing the smallest blocks of code called **units.** S
 - up to date documentation on the different units in the program
 - improves quality of code by detecting any error-prone function 
 
-Here is an overview of how we employ unit testing into our workflow:
+### Workflow 
 
 ![image](https://github.com/user-attachments/assets/31037d5a-f6a8-4650-ba47-50e16c6c4203)
 
