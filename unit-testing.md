@@ -14,5 +14,8 @@ Unit testing is a way of testing the smallest blocks of code called **units.** S
 
 The following workflow describes how the unit testing would be implementing into our CI/CD pipeline. We have decided to implement the unit tests checks in Github Actions rather than Husky (pre-commit) due to two **core** reasons:
 
--  You want to run your tests in the same environment where you build your deliverables (deployed application). Pre-commits run the tests on the local environment which would be configured differently
+-  You want to run your tests in the same environment where you build your deliverables (deployed application). Pre-commits run the tests on the local environment which could be configured differently causing it to pass locally but fail on production server.
+
+<br> 
+
 -  Unit tests can be computationally expensive. Running them on a personal computer might cause performance issues.
