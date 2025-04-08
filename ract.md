@@ -19,7 +19,7 @@ flowchart
     CheckCredentialsFile -- Does Not Exist --> ReturnToStart2(["Return to start"])
     ReadCredentials --> ConnectToDB(["Use credentials to connect to PostgreSQL and Redis"])
     ConnectToDB --> RetrieveUserData(["Retrieve user sessions from Redis"])
-    RetrieveUserData --> QueryFromIndex(["Queried from name with the help of the index. Get Redis keys back."])
+    RetrieveUserData --> QueryFromIndex(["Queried from name with the help of the index (idx:session). Get Redis keys back."])
     QueryFromIndex --> DeleteUserSessions(["Delete all user sessions through referencing the keys."])
 
     DeleteUserSessions --> PromptForRoleChange{"Select new role type"}
