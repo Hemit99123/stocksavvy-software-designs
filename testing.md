@@ -1,6 +1,14 @@
-## 🧪 Unit Testing
+## 🧪 Testing
 
-Unit testing is a way of testing the smallest blocks of code called **units.** Some examples of units are functions, methods, classes, and many more. This requires more development time to build these unit tests. So, why are they worth it?
+There are 2 types of testing that are implemented within our software systems:
+
+### - Unit Testing:
+Unit testing is a way of testing the smallest blocks of code called **units.** Some examples of units are functions, methods, classes, and many more. 
+
+### - Integration Testing:
+Unlike unit testing, integration tests are test ran on a software that encompasses multiple different units that work in unison as a single entity. Examples include controllers for backend as they use Express (seperate piece of code with it's own set of units) to produce a response.
+
+This requires more development time to build these tests. So, why are they worth it?
 
 ### Benefits to implementing a unit testing solution
 
@@ -18,8 +26,4 @@ The following workflow describes how the unit testing would be implementing into
 
 <br> 
 
--  Unit tests can be computationally expensive. Running them on a personal computer might cause performance issues.
-
-### Resources
-
-- This is a good article that shows how we can add unit testing for an API call: https://medium.com/@ben.dev.io/node-js-unit-testing-with-jest-b7042d7c2ad0
+- Tests can be computationally expensive. Running them on a personal computer might cause performance issues.
