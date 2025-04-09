@@ -5,7 +5,7 @@ This repo is a collection of the software designing work that went into the Stoc
 ### Current record:
 
 - Authentication Flow (authflow.md)
-- Database Diagrams and their relationships (db.md)
+- Database Diagrams and their relationships (database.md)
 - Role Assignment CLI Tool (ract.md)
 - Sessions (sessions.md)
 
