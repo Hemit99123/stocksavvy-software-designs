@@ -19,3 +19,7 @@ The following workflow describes how the unit testing would be implementing into
 <br> 
 
 -  Unit tests can be computationally expensive. Running them on a personal computer might cause performance issues.
+
+### Resources
+
+- This is a good article that shows how we can add unit testing for an API call: https://medium.com/@ben.dev.io/node-js-unit-testing-with-jest-b7042d7c2ad0
