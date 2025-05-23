@@ -1,20 +1,9 @@
 ## 🧪 Testing
 
-There are 2 types of testing that are implemented within our software systems:
+Testing will help better the code quality of our codebase. We use the following tools to conduct our testings:
 
-### - Unit Testing:
-Unit testing is a way of testing the smallest blocks of code called **units.** Some examples of units are functions, methods, classes, and many more. 
-
-### - Integration Testing:
-Unlike unit testing, integration tests are test ran on a software that encompasses multiple different units that work in unison as a single entity. Examples include controllers for backend as they use Express (seperate piece of code with it's own set of units) to produce a response.
-
-This requires more development time to build these tests. So, why are they worth it?
-
-### Benefits to implementing a unit testing solution
-
-- allows for early error detection
-- up to date documentation on the different units in the program
-- improves quality of code by detecting any error-prone function 
+- Jest: allows to build testcases in Javascript/Typescript
+- Supertest: allows developers to mock API responses
 
 ### Workflow 
 
